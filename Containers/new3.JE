@@ -1,0 +1,10 @@
+useC common.cs
+use common_initiate.cs
+int i = 2
+int b = 3
+string h = haha
+print M# # i + b # #M \n
+print M# # b * i # #M \n
+print M# # ( 3 + ( b * 8 ) ) % i # #M \n
+print " h " \n
+end 
