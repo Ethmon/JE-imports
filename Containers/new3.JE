@@ -1,10 +1,26 @@
 useC common.cs
-use common_initiate.cs
+useC io.cs
+use Common-io.cs
 int i = 2
 int b = 3
+list l int = i , b 
 string h = haha
 print M# # i + b # #M \n
 print M# # b * i # #M \n
 print M# # ( 3 + ( b * 8 ) ) % i # #M \n
 print " h " \n
+print " l " \n
+StIn hello !S! there !S!
+print \n
+print !Last! \n
+StIn int?: !S!
+i = !Last!
+print incremented !S! by !S! one: !S! M# # i + 1 # #M \n
+i += 1
+// VarOut i
+// StDisp
+ReadF Math_parser.cs
+string j = !Last!
+VarOut j
+print " j " \n
 end 

@@ -15,6 +15,10 @@ namespace common
 		{
 			return "int";
 		}
+		public override string ToString()
+		{
+			return self.ToString();
+		}
 		public object getV()
 		{
 			return self;
@@ -93,6 +97,10 @@ namespace common
 		public static double Dehash(byte[] d)
 		{
 			return (int)d[0];//ToInt32(d);
+		}
+		public override string ToString()
+		{
+			return self.ToString();
 		}
 		public string name()
 		{
@@ -175,6 +183,10 @@ namespace common
 		public object getV()
 		{
 			return self;
+		}
+		public override string ToString()
+		{
+			return self.ToString();
 		}
 		public Jstring(string j)
 		{
