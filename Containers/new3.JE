@@ -19,8 +19,15 @@ print incremented !S! by !S! one: !S! M# # i + 1 # #M \n
 i += 1
 // VarOut i
 // StDisp
-ReadF Pair.cs
+ReadF new1.txt
 string j = !Last!
 VarOut j
-print " j " \n
+// StIn
+StDisp
+print \n
+print new !S! text: \n
+StIn
+string kk = !Last!
+VarOut kk
+WriteF new1.txt
 end 

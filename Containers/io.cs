@@ -46,7 +46,9 @@ namespace io
 				if(D.referenceVar(equation[1]) is jumpE_basic.Valued)
 				{
 					sent_out = (((jumpE_basic.Valued)D.referenceVar(equation[1])).getV().ToString());
+					//Console.WriteLine($"sucsess:  {sent_out}");
 				}
+				//else Console.WriteLine("failure");
 				
 			}
 			public static void display(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
@@ -57,6 +59,7 @@ namespace io
 			public static void WriteOut(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 			{
 				string filepath = $"{jumpE_basic.base_runner.currentPath}\\{equation[1]}";
+				//Console.WriteLine(filepath);
 				File.WriteAllText(filepath,sent_out);
 			}
 			
