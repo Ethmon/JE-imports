@@ -50,7 +50,9 @@ namespace common
 		}
 		public static void set(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 		{
-			int math = (int)(jumpE_basic.base_runner.doMath(equation.Skip(2).ToArray(),D,Base));
+			int math = 0;
+			if(equation.Count() != 2)
+				math = (int)(jumpE_basic.base_runner.doMath(equation.Skip(2).ToArray(),D,Base));
 			switch(equation[1])
 			{
 				case "=":
@@ -137,7 +139,9 @@ namespace common
 		}
 		public static void set(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 		{
-			double math = (jumpE_basic.base_runner.doMath(equation.Skip(2).ToArray(),D,Base));
+			double math = 0;
+			if(equation.Count()!=2)
+				math = (jumpE_basic.base_runner.doMath(equation.Skip(2).ToArray(),D,Base));
 			switch(equation[1])
 			{
 				case "=":
