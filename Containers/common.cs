@@ -263,10 +263,11 @@ namespace common
 	}
 	
 			}
+			Jstring NN = new Jstring(Message);
 			switch(code[2])
 			{
 				case "=":
-					D.setCustom("string",code[1],Message);
+					D.setCustom("string",code[1],NN);
 					break;
 				default:
 					break;
