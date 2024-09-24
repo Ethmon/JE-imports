@@ -1,14 +1,14 @@
 namespace collections
 {
 	
-	{
+	
 			public class node<T> : jumpE_basic.CustTypeName , jumpE_basic.Valued
 					{
 						public T Data;
 						public node<T> nextnode;
 						public string name()
 						{
-							return "node"
+							return "node";
 						}
 						public object getV()
 						{
@@ -16,20 +16,30 @@ namespace collections
 						}
 						public node(T data)
 						{
-							This.Data = data;
+							this.Data = data;
 							nextnode = null;
+						}
+						public node()
+						{
+							//.Data = null;
+							nextnode = null;
+						}
+						public void setplace(T Data)
+						{
+							this.Data = Data;
 						}
 					}
 						
-			public class LikedList<T> : jumpE_basic.CustTypeName , jumpE_basic.Valued
-					{
+			public class LinkedList<T> : jumpE_basic.CustTypeName , jumpE_basic.Valued
+				{
 				private node<T> Head;
 				private node<T> Last;
-				public LikedList(T data)
+				public LinkedList(T data)
 				{
 					Head = new node<T>(data);
 					Last = Head;
 				}
+				
 				public object getV()
 				{
 					return Head;
@@ -38,21 +48,21 @@ namespace collections
 				{
 					return "linked-list";
 				}
-				public LikedList()
+				public LinkedList()
 				{
 					Head = null;
 					Last = null;
 				}
 				public void add(T data)
 				{
-					var newnode = node<T>(data);
+					var newnode = new node<T>(data);
 					if(Head == null){
 						Head = newnode;
 						Last = newnode;
 					}
 					else
 					{
-						Node<T> cur = Last;
+						node<T> cur = Last;
 						while(cur.nextnode != null)
 							cur = cur.nextnode;
 						cur.nextnode = newnode;
@@ -62,9 +72,10 @@ namespace collections
 				}
 				public static void set(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 					{
-						if(equation==3)
+						
+						if(equation.Count()==3)
 						{
-							D.setCustom("linked-list",equation[1],new LikedList());
+							D.setCustom("linked-list",equation[1],new LinkedList<jumpE_basic.Data.custtypeofType[equation[2]]>());
 						}
 						
 					}
@@ -78,6 +89,6 @@ namespace collections
 				}
 				
 			}
-	}
+	
 
 }

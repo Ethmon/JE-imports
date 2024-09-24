@@ -59,6 +59,7 @@ namespace io
 			public static void WriteOut(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 			{
 				string filepath = $"{jumpE_basic.base_runner.currentPath}\\{equation[1]}";
+			
 				//Console.WriteLine(filepath);
 				File.WriteAllText(filepath,sent_out);
 			}
