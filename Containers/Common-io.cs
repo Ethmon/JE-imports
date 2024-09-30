@@ -9,7 +9,7 @@ jumpE_basic.Data.add_custtype( "double",typeof(common.Jdouble) );
 jumpE_basic.base_runner.CommandRegistry.add_command( "string" , common.Jstring.sett );
 jumpE_basic.base_runner.CommandRegistry.seters.Add( "string" , common.Jstring.set );
 jumpE_basic.Data.add_custtype( "string" ,typeof(common.Jstring));
-
+jumpE_basic.base_runner.Mathss.Add("!AtString!", common.Jstring.AAT);
 
 jumpE_basic.base_runner.CommandRegistry.add_command( "StIn" , io.Standard_In.StIn );
 jumpE_basic.base_runner.CommandRegistry.add_command( "Key" , io.Standard_In.Key );

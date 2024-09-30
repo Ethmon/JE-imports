@@ -356,6 +356,54 @@ namespace common
 		}
 		
 		
+	
+	public static string[] AAT(string[] E, Data D, base_runner B, int I, int K)
+		{
+			
+			if(D.referenceVar(E[I+1]) is Jstring)
+			{
+				// Console.Write("DKJNG");
+				Jstring ddd = (Jstring)D.refrenceCustom("string",E[I+1]);
+				// Console.Write("HASLKDH");
+				string jkj = ddd.getV().ToString();
+				
+				// Console.Write("JDKFDJLFJ");
+				//string jkj = ddd.getV();
+				int d = 0;
+				if(D.isnumvar(E[I+2]))
+				{
+					d = (int)(((jumpE_basic.Number)D.referenceVar(E[I+2])).get_value());
+				}else if(int.TryParse(E[I+2],out int dd))
+				{
+					d = dd;
+				}
+				if(E[I+3] != "|")
+				{
+					int sds = 0;
+					if(D.isnumvar(E[I+3]))
+					{
+						sds = (int)(((jumpE_basic.Number)D.referenceVar(E[I+3])).get_value());
+					}else if(int.TryParse(E[I+3],out int dddd))
+					{
+						sds = dddd;
+					}
+					else if(E[I+3] == "->|")
+					{
+						sds = jkj.Length-d;
+					}
+					string[] fff = {jkj.Substring(d,sds),"4"};
+					return fff;
+					
+				}
+				else{
+				string[] fff = {jkj.Substring(d,d),"3"};
+				return fff;
+				}
+			}
+			Console.Write("ERROR");
+			string[] ffff = {"0","0"};
+			return ffff;
+		}
 	}
 
 }

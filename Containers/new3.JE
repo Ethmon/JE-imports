@@ -5,6 +5,18 @@ int i = 2
 int b = 3
 list l int = i , b 
 string h = haha
+jp >> dsd
+print mamam \n
+>> dsd
+print hello !S! there \n
+<<
+print " h "
+jp >> dataini
+//
+jp >> printdata
+jp >> receiveV
+print " v " \n
+//
 print M# # i + b # #M \n
 print M# # b * i # #M \n
 print M# # ( 3 + ( b * 8 ) ) % i # #M \n
@@ -13,12 +25,17 @@ print " l " \n
 StIn hello !S! there !S!
 print \n
 print !Last! \n
+string jkjf = !Last!
+// print " jkjf " \n
+string ggg = !AtString! jkjf 0 ->| | \n
+VarOut ggg
+StDisp
 StIn int?: !S!
 i = !Last!
 print incremented !S! by !S! one: !S! M# # i + 1 # #M \n
 i += 1
-// VarOut i
-// StDisp
+VarOut i
+StDisp
 ReadF new1.txt
 string j = !Last!
 VarOut j
@@ -30,4 +47,26 @@ StIn
 string kk = !Last!
 VarOut kk
 WriteF new1.txt
+end 
+skip
+{
+>> dataini
+side " h "
+	int v = 203
+	string loll = this !S! is !S! a !S! test !S! of !S! data !S! sheets!!
+	IDT 1.02123
+	pop
+<<
+print did !S! not !S! work
+>> printdata
+call " h "
+	print " loll " \n
+	pop 
+<< 
+>> receiveV
+call " h "
+	push v int
+	pop
+<<
+}
 end 
