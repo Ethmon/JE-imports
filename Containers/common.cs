@@ -356,7 +356,22 @@ namespace common
 		}
 		
 		
-	
+	public static string[] SIZEOF(string[] E, Data D, base_runner B, int I, int K)
+	{
+		int count = -1;
+		// Console.Write("SIZEOF INSIDE");
+		if(D.referenceVar(E[I+1]) is Jstring)
+		{
+			// Console.Write("This is stupid");
+			Jstring ddd = (Jstring)D.refrenceCustom("string",E[I+1]);
+			count = ddd.getV().ToString().Length;
+		}
+		// Console.Write(count + " this is maby working");
+		string[] aaa = {count.ToString(),"2"};
+		// Console.Write(aaa[0] + "    " + aaa[1] + "\n");
+		return aaa;
+			
+	}
 	public static string[] AAT(string[] E, Data D, base_runner B, int I, int K)
 		{
 			

@@ -12,14 +12,21 @@ print hello !S! there \n
 <<
 print " h "
 jp >> dataini
-//
 jp >> printdata
 jp >> receiveV
 print " v " \n
-//
 print M# # i + b # #M \n
 print M# # b * i # #M \n
 print M# # ( 3 + ( b * 8 ) ) % i # #M \n
+// print B# # i == b # #B \n
+if and ( i + 1 )  == b 
+{ 
+print TRUE
+jp >> AADSESA
+}
+print FALSE
+>> AADSESA
+print \n
 print " h " \n
 print " l " \n
 StIn hello !S! there !S!
@@ -27,20 +34,35 @@ print \n
 print !Last! \n
 string jkjf = !Last!
 // print " jkjf " \n
-string ggg = !AtString! jkjf 0 ->| | \n
-VarOut ggg
-StDisp
+int ending = !StringSize! jkjf |
+int curent = 0 - 1
+>> continue
+curent += 1
+// print " curent " !S! to !S! " ending "
+if and curent != ending  
+{
+print !AtString! jkjf curent 1 | \n
+jp >> continue
+<<
+} 
+free ending
+free curent
+free after
+// string ggg = !AtString! jkjf 0 1 |  \n
+// VarOut ggg
+// StDisp
 StIn int?: !S!
 i = !Last!
 print incremented !S! by !S! one: !S! M# # i + 1 # #M \n
 i += 1
-VarOut i
-StDisp
+// VarOut i
+// StDisp
 ReadF new1.txt
 string j = !Last!
-VarOut j
+print " j "
+// VarOut j
 // StIn
-StDisp
+// StDisp
 print \n
 print new !S! text: \n
 StIn
