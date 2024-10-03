@@ -18,7 +18,7 @@ print " v " \n
 print M# # i + b # #M \n
 print M# # b * i # #M \n
 print M# # ( 3 + ( b * 8 ) ) % i # #M \n
-// print B# # i == b # #B \n
+print B# # i == b # #B \n
 if and ( i + 1 )  == b 
 { 
 print TRUE
@@ -31,14 +31,15 @@ print " h " \n
 print " l " \n
 StIn hello !S! there !S!
 print \n
-print !Last! \n
+string printingtoscreen = !Last!
+VarOut printingtoscreen
+StDisp
+print \n
 string jkjf = !Last!
-// print " jkjf " \n
 int ending = !StringSize! jkjf |
 int curent = 0 - 1
 >> continue
 curent += 1
-// print " curent " !S! to !S! " ending "
 if and curent != ending  
 {
 print !AtString! jkjf curent 1 | \n
@@ -48,21 +49,13 @@ jp >> continue
 free ending
 free curent
 free after
-// string ggg = !AtString! jkjf 0 1 |  \n
-// VarOut ggg
-// StDisp
 StIn int?: !S!
 i = !Last!
 print incremented !S! by !S! one: !S! M# # i + 1 # #M \n
 i += 1
-// VarOut i
-// StDisp
 ReadF new1.txt
 string j = !Last!
 print " j "
-// VarOut j
-// StIn
-// StDisp
 print \n
 print new !S! text: \n
 StIn
@@ -81,9 +74,12 @@ side " h "
 <<
 print did !S! not !S! work
 >> printdata
+if and typ h 1.02123
+{
 call " h "
 	print " loll " \n
 	pop 
+}
 << 
 >> receiveV
 call " h "
