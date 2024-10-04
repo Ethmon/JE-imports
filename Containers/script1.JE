@@ -50,7 +50,7 @@ skip
 		>> dogConstructor1
 			jp >> animailConstructor1
 			call " namer "
-				string species = dog
+				int species = 1
 				pop
 			<<
 		<<
@@ -62,8 +62,7 @@ skip
 			call " namer "
 				if and exist species
 				{
-				string dogo = dog
-					if and obj dogo species
+					if and species == 1
 					{
 						print Woof \n
 						pop
