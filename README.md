@@ -32,6 +32,6 @@ input/output:
 Operations:
 	(Planed) Math.cs
 	
-Netweorks:
+Networks:
 	(Planed) packet.cs
 	

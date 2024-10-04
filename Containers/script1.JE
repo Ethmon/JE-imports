@@ -1,0 +1,114 @@
+useC common.cs
+useC io.cs
+use Common-io.cs
+int Staticid = 0
+skip
+{
+	animal
+	{
+		>> animailConstructor1
+			side " namer "
+				bring namer
+				string name = " namer "
+				int age = 0
+				bring Staticid
+				int id = Staticid
+				free Staticid
+				pop
+			Staticid = Staticid + 1
+		<<
+		>> animailConstructor2
+			jp >> animailConstructor1
+			call " namer "
+				bring Newage
+				age = Newage
+				free Newage
+				pop
+		<<
+		>> setName
+			call " namer "
+				bring newName
+				name = newName
+				free newName
+				pop
+		<<
+		>> setAge
+			call " namer "
+				bring Newage
+				age = Newage
+				free Newage
+				pop
+		<<
+		>> incrementAge
+			call " namer "
+				age = age + 1
+				pop
+		<<
+	}
+	dog
+	{
+		>> dogConstructor1
+			jp >> animailConstructor1
+			call " namer "
+				string species = dog
+				pop
+			<<
+		<<
+		>> dogConstructor2
+			jp >> dogConstructor1
+			jp >> setAge
+		<<
+		>> speak
+			call " namer "
+				if and exist species
+				{
+				string dogo = dog
+					if and obj dogo species
+					{
+						print Woof \n
+						pop
+						<<
+					}
+					pop
+					jp -> speak
+				}
+				pop
+				jp -> speak
+		<<
+		>> speak
+			print not !S! a !S! dog \n
+		<<
+	}
+}
+string namer = bob
+jp >> animailConstructor1
+string first = " namer "
+namer = joe
+int Newage = 4
+jp >> animailConstructor2
+string second = " namer "
+namer = oscar
+Newage = 5
+jp >> dogConstructor2
+string name = bob
+call " name "
+	print " name " \n
+	print " age " \n
+	pop
+namer = " name "
+jp >> speak
+name = joe
+call " name "
+	print " name " \n
+	print " age " \n
+	pop
+namer = " name "
+jp >> speak
+name = oscar
+call " name "
+	print " name " \n
+	print " age " \n
+	pop
+namer = " name "
+jp >> speak
+end

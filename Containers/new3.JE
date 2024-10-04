@@ -4,7 +4,10 @@ use Common-io.cs
 int i = 2
 int b = 3
 list l int = i , b 
-string h = haha
+string staticdatain = ccsc
+string h = ccsc
+jp >> dsd
+h = haha
 jp >> dsd
 print mamam \n
 >> dsd
@@ -21,8 +24,8 @@ print M# # ( 3 + ( b * 8 ) ) % i # #M \n
 print B# # i == b # #B \n
 if and ( i + 1 )  == b 
 { 
-print TRUE
-jp >> AADSESA
+	print TRUE
+	jp >> AADSESA
 }
 print FALSE
 >> AADSESA
@@ -39,13 +42,14 @@ string jkjf = !Last!
 int ending = !StringSize! jkjf |
 int curent = 0 - 1
 >> continue
-curent += 1
-if and curent != ending  
-{
-print !AtString! jkjf curent 1 | \n
-jp >> continue
+	curent += 1
+	if and curent != ending  
+	{
+		print !AtString! jkjf curent 1 | \n
+		jp >> continue
+		<<
+	} 
 <<
-} 
 free ending
 free curent
 free after
@@ -68,13 +72,13 @@ skip
 >> dataini
 side " h "
 	int v = 203
-	string loll = this !S! is !S! a !S! test !S! of !S! data !S! sheets!!
-	IDT 1.02123
+	string loll = this !S! is !S! a !S! test !S! of !S! data !S! sheets!! \n
+	IDT 1
 	pop
 <<
 print did !S! not !S! work
 >> printdata
-if and typ h 1.02123
+if and typ h staticdatain
 {
 call " h "
 	print " loll " \n

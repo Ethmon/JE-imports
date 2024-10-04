@@ -1,6 +1,6 @@
 namespace common
 {
-	public class Jint : jumpE_basic.CustTypeName , jumpE_basic.Number , jumpE_basic.Valued 
+	public class Jint : jumpE_basic.CustTypeName , jumpE_basic.Number , jumpE_basic.Valued , jumpE_basic.Copyable
 	{
 		int self;
 		// public byte[]  jumpE_basic.Hashable.hash()
@@ -10,6 +10,10 @@ namespace common
 		public static int Dehash(byte[] d)
 		{
 			return (int)d[0];//ToInt32(d);
+		}
+		public object Copy()
+		{
+			return new Jint(self);
 		}
 		public string name()
 		{
@@ -89,7 +93,7 @@ namespace common
 
 
 
-	public class Jdouble : jumpE_basic.CustTypeName , jumpE_basic.Number , jumpE_basic.Valued 
+	public class Jdouble : jumpE_basic.CustTypeName , jumpE_basic.Number , jumpE_basic.Valued , jumpE_basic.Copyable
 	{
 		double self;
 		// public byte[]  jumpE_basic.Hashable.hash()
@@ -99,6 +103,10 @@ namespace common
 		public static double Dehash(byte[] d)
 		{
 			return (int)d[0];//ToInt32(d);
+		}
+		public object Copy()
+		{
+			return new Jdouble(self);
 		}
 		public override string ToString()
 		{
@@ -177,12 +185,16 @@ namespace common
 	}
 
 
-	public class Jstring : jumpE_basic.CustTypeName , jumpE_basic.Valued
+	public class Jstring : jumpE_basic.CustTypeName , jumpE_basic.Valued, jumpE_basic.Copyable
 	{
 		string self = "";
 		public string name()
 		{
 			return "string";
+		}
+		public object Copy()
+		{
+			return new Jstring(self);
 		}
 		public object getV()
 		{
@@ -418,6 +430,22 @@ namespace common
 			Console.Write("ERROR");
 			string[] ffff = {"0","0"};
 			return ffff;
+		}
+		public static bool operator ==(Jstring a, Jstring b)
+		{
+			 return (a.ToString() == b.ToString());
+		}
+		public static bool operator !=(Jstring a, Jstring b)
+		{
+			return (a.ToString() != b.ToString());
+		}
+		public bool Equals(object a)
+		{
+			if ( a is Jstring)
+			{
+				return (((Jstring)a) == this);
+			}
+			return false;
 		}
 	}
 
