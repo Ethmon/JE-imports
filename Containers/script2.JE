@@ -1,0 +1,104 @@
+useC common.cs
+useC io.cs
+use Common-io.cs
+list names string
+string name = !S!
+int count = 0
+StIn !S!
+count = !Last!
+int i = 0
+jp >> loop
+skip
+{
+>> loop
+	if and i >= count
+	{
+		<<
+	}
+	StIn Name? !S!
+	name = !Last!
+	jp >> create
+	names add name
+	i ++
+	print \n \n
+	jp >> loop
+	<<
+}
+
+int i = 0
+jp >> loop2
+skip
+{
+>> loop2
+	if and i >= count
+	{
+		<<
+	}
+	name = !L! names i
+	jp >> Pout
+	i ++
+	jp >> loop2
+	<<
+}
+string outP = NULL
+jp >> compound
+VarOut outP
+print \n " outP "
+WriteF new2.txt
+end
+skip
+{
+>> create
+	side " name "
+		int age = 0
+		StIn age? !S!
+		age = !Last!
+		string job = Null
+		StIn Job? !S!
+		job = !Last!
+		pop
+<<
+
+>> Pout
+	print ______________________ \n
+	print name !S! : !S! " name " \n
+	call " name "
+		print age !S! : !S! " age " \n
+		print job !S! : !S! " job " \n
+		pop
+	print ______________________ \n
+<<
+
+>> compound
+	int i = 0
+	outP = { \n
+	jp >> loop3
+	skip
+	{
+		>> loop3
+		if and i >= count
+		{
+			<<
+		}
+		if and i != 0
+		{
+			outP += !S! , \n
+		}
+		name = !L! names i
+		outP += !S! { \n !S! !S! " name " , \n
+		call " name "
+			push age
+			push job
+			pop
+		outP += !S! !S! " age " , \n
+		outP += !S! !S! " job "  \n
+		free age
+		free job
+		i ++
+		outP += !S! } \n 
+		jp >> loop3
+		<<
+	}
+	outP += \n }
+<<
+}
