@@ -1,0 +1,93 @@
+useC common.cs
+useC io.cs
+use Common-io.cs
+list answers double
+double ans = 0
+skip
+{
+	>> givePosition
+		double t = 0
+		double a = 0
+		double v = 0
+		double xi = 0
+		StIn T: !S!
+		t = !Last!
+		StIn A: !S!
+		a = !Last!
+		StIn V: !S!
+		v = !Last!
+		StIn Xi: !S!
+		xi = !Last!
+		ans = xi + v * t + ( a / 2 ) * t * t
+		print x !S! =  !S! " ans " \n
+		free t
+		free a
+		free v
+		free xi
+	<<
+	
+	>> springPotential
+		double k = 0
+		double Dx = 0
+		StIn k: !S!
+		k = !Last!
+		StIn Dx: !S!
+		Dx = !Last!
+		ans = ( 1 / 2 ) * k * Dx
+		print Se !S! = !S! " ans " \n
+		free k
+		free Dx
+	<<
+	
+	
+	>> GiveVelocity
+		double t = 0
+		double a = 0
+		double vi = 0
+		StIn T: !S!
+		t = !Last!
+		StIn A: !S!
+		a = !Last!
+		StIn Vi: !S!
+		vi = !Last!
+		ans = ( a * t ) + vi
+		print v !S! = !S! " ans " \n
+		free t
+		free a
+		free vi
+	<<
+	
+	
+	
+}
+
+
+>> loop
+int type = 0
+StIn What !S! equation? \n 0 !S! : !S! exit \n 1 !S! : !S! Save !S! answer \n 2 !S! : !S! x+v*t+(a/2)t^2 \n 3 !S! : !S! (1/2)*k*Dx \n 4 !S! : !S!  (a*t)+vi \n
+type = !Last!
+if and type == 0
+{
+print " answers "
+end
+}
+if and type == 1
+{
+print Save !S! : !S! " ans " \n
+answers add ans
+}
+if and type == 2
+{
+jp >> givePosition
+}
+if and type == 3
+{
+jp >> springPotential
+}
+if and type == 4
+{
+jp >> GiveVelocity
+}
+jp <- loop
+end 
+
