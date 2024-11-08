@@ -178,7 +178,7 @@ namespace HashedVars
 		{
 			return new byte[]{(byte)self};
 		}
-		public JByte(char a)
+		public Jchar(char a)
 		{
 			this.self = a;
 		}
