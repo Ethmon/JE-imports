@@ -1,0 +1,43 @@
+useC common.cs
+use common_initiate.cs
+
+
+
+list ints int
+int i = 0
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i; i ++ ;
+ints add i;
+>> loop
+if and i <= 0
+{
+	jp -> endloop
+}
+print !L! ints i \n
+i --
+jp <- loop
+>> endloop
+end 

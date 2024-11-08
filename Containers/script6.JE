@@ -1,0 +1,139 @@
+useC common.cs
+use common_initiate.cs
+
+
+skip
+{
+
+>> CreatePart
+	side " namer "
+		int N = 0 - 1
+		int S = 0 - 1
+		int E = 0 - 1
+		int W = 0 - 1 
+		int U = 0 - 1
+		int P = 0 - 1
+		int corner = 0 - 1
+		int middle = 0 - 1
+		int outer = 0 - 1
+		pop
+<<
+
+
+>>  NS1+Shift
+	
+	pop
+<<
+
+>>  NS1-Shift
+
+<<
+
+
+>>  NS2+Shift
+
+<<
+
+>>  NS2-Shift
+
+<<
+
+
+>>  NS3+Shift
+
+<<
+
+>>  NS3-Shift
+
+<<
+
+
+>> PrintFront
+	int a = !L! NS1 size
+	int i = 0
+	string name = NULL
+	>> loop
+	if and i < a
+	{
+		name = !L! NS1 i
+		call " name "
+			print |~| N ~|~ N . 
+			print ~|~ 0 |~| 0 !S!
+			pop
+		i ++
+		jp <- loop
+	}
+	print |~| 0 ~|~ 0  !S! \n
+	a = !L! NS2 size
+	i = 0
+	name = NULL
+	
+	>> loop
+	if and i < a
+	{
+		name = !L! NS2 i
+		call " name "
+			print |~| N ~|~ N . 
+			pop
+		i ++
+		jp <- loop
+	}
+	
+	print |~| 0 ~|~ 0 \n
+	
+	a = !L! NS3 size
+	i = 0
+	name = NULL
+	>> loop
+	if and i < a
+	{
+		name = !L! NS3 i
+		call " name "
+			print |~| N ~|~ N . 
+			
+			pop
+		i ++
+		jp <- loop
+	}
+	print |~| 0 ~|~ 0 \n
+	
+	
+<<
+
+
+}
+
+list NS1 string
+
+list NS2 string
+
+list NS3 string
+
+string namer = B1
+jp >> CreatePart
+NS1 add namer
+call " namer "
+	N = 3
+	W = 4
+	U = 5
+	corner = 1
+	pop
+string namer = B2
+jp >> CreatePart
+NS1 add namer
+call " namer "
+	N = 3
+	W = 4
+	outer = 1
+	pop
+string namer = B3
+jp >> CreatePart
+NS1 add namer
+call " namer "
+	N = 3
+	W = 4
+	D = 8
+	corner = 1
+	pop
+jp >> PrintFront
+end 

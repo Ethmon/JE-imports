@@ -1,5 +1,6 @@
 useC common.cs
 useC io.cs
+useC HashedVars.cs
 // useC collections.cs
 use Common-io.cs
 print added \n

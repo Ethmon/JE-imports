@@ -1,0 +1,68 @@
+# right now this is being used as a way to figure out how i want to do graphics using the graphics.cs file that will eventually be added as well as the JEG.dll info
+useC common.cs
+useC io.cs
+useC Graphics.cs
+useDC JEG.dll
+use Common-io.cs
+use Graphics-initiate.cs
+
+
+
+skip
+{
+
+>> Window_Initiate
+	Gside " namer "
+		Screen p = new
+		p add display
+		p show
+		pop
+<<
+
+>> Set_screen
+	call " namer "
+		bring New_Screen
+		p screen set New_Screen
+		free New_Screen
+		pop
+<<
+
+
+
+}
+jp >> Window_Initiate
+Picture pic1 = Image.PNG
+Parray pic2 = Image2.JSON
+pic2 1 1 { 120 0 120 360 };// that would cause the pixle at x = 1 and y = 1 to be { 120 0 120 }
+Image New_Screen =  pic1
+list names string
+string namer = one
+names add namer
+namer = two
+names add namer
+int i = 0
+int x = 0
+jp -> loop
+skip
+{
+>> loop
+	if and x >= 25
+	{
+		jp -> exit
+	}
+	if and i == 0
+	{
+		i = 1
+		New_Screen = pic1
+		jp -> else
+	}
+	i = 0
+	>> else
+	namer = !L! names i
+	print " namer " \n
+	x ++
+	jp >> Set_screen
+	jp <- loop
+}
+>> exit
+end 

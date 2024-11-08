@@ -1,0 +1,77 @@
+useC common.cs
+useC io.cs
+use Common-io.cs
+// these are some  examples of more efficient loops and other things
+list intgers int
+int hh = 53
+intgers add hh
+hh = 3
+intgers add hh
+hh = 32
+intgers add hh
+hh = 12
+intgers add hh
+hh = 39
+intgers add hh
+int a = 0
+int b = 0
+int checka = 0
+int checkb = 1
+int goodto = 0
+>> start
+	a = goodto
+	b ++
+	// print " b " \n
+	if and b >= !L! intgers size
+	{
+		jp -> else
+	}
+	if and a == !L! intgers size
+	{
+		jp -> sorted
+	}
+	if and a == b
+	{
+		b ++
+	}
+	// print !L! intgers a !S! !L! intgers b \n
+	if and !L! intgers a > !L! intgers b
+	{
+		int contains = !L! intgers a
+		int con = !L! intgers b
+		intgers a con
+		intgers b contains
+		free contains
+		free con
+	}
+	jp <- start
+	>> else
+	print " intgers " \n
+		checka = 0 - 1
+		checkb = 0
+		>> check
+			checka ++
+			checkb = checka + 1
+			if and checka < !L! intgers size
+			{
+				>> check2
+				checkb ++
+				if and checkb < !L! intgers size
+				{
+					if and !L! intgers checka <= !L! intgers checkb
+					{
+						checkb ++
+						print T
+						jp <- check2
+					}
+					print F \n
+					goodto = checka
+					b = checka
+					jp <- start
+				}
+				jp <- check
+			}
+			jp -> sorted
+>> sorted
+print " intgers " \n
+end 

@@ -52,6 +52,13 @@ namespace common
 					break;
 			}
 		}
+		public static object listSet(List<string> eq, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+		{
+			int math = 0;
+			if(eq.Count() != 2)
+				math = (int)(jumpE_basic.base_runner.doMath(eq.Skip(2).ToArray(),D,Base));
+			return new Jint(math);
+		}
 		public static void set(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 		{
 			int math = 0;
@@ -131,6 +138,13 @@ namespace common
 		public Jdouble(double a)
 		{
 			this.self = a;
+		}
+		public static object listSet(List<string> eq, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+		{
+			double math = 0;
+			if(eq.Count() != 2)
+				math = (jumpE_basic.base_runner.doMath(eq.Skip(2).ToArray(),D,Base));
+			return new Jdouble(math);
 		}
 		public static void sett(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 		{

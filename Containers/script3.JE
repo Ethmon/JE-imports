@@ -1,0 +1,112 @@
+useC common.cs
+useC io.cs
+use Common-io.cs
+list Colors int
+skip
+{
+>> displayBar
+	raise
+	int S = !L! Colors size
+	int i = 0
+	int cur = 0
+	jp >> loop
+	skip 
+	{	
+	>> loop
+		if and i >= S
+		{
+			<<
+		}
+		cur = !L! Colors i
+		print |~| cur  ~|~ cur -
+		i ++
+		jp >> loop
+	<<
+	}
+	print |~| 16 ~|~ 0
+	pop
+<<
+}
+
+int i = 0
+jp >> loop2
+skip 
+{
+>> loop2
+if 	and i >= 20
+	{
+		<<
+	}
+	Colors add i
+	i ++
+	jp >> loop2
+<<
+}
+free i 
+jp >> displayBar
+print \n
+int colorr = 16
+jp >> fillWC
+skip
+{
+>> fillWC
+	int i = 0
+	int count = !L! Colors size
+	jp >> loop3
+	skip
+	{
+	>> loop3
+		if and i >= count
+		{
+			<<
+		}
+		Colors i colorr
+		i ++
+		jp <- loop3
+	<<
+	}
+	free i
+	free count
+<<
+}
+skip
+{
+>> SetFromList
+	raise
+	bring NewColors
+	bring Colors
+	free i
+	free v
+	Colors clear 
+	int sizeof = !L! NewColors size
+	int i = 0
+	int v = 0
+	jp >> loopdeloop
+	skip
+	{
+	>> loopdeloop
+		if and i >= sizeof
+		{
+		<<
+		}
+		v = !L! NewColors i
+		Colors add v
+		i ++
+		jp >> loopdeloop
+	<<
+	}
+	pop
+<<
+}
+jp >> displayBar
+print \n
+jp >> displayBar
+print \n
+colorr = 5
+jp >> fillWC
+jp  >> displayBar
+print \n
+jp >> displayBar
+print \n
+end
+ 

@@ -75,7 +75,8 @@ namespace collections
 						
 						if(equation.Count()==3)
 						{
-							D.setCustom("linked-list",equation[1],new LinkedList<jumpE_basic.Data.custtypeofType[equation[2]]>());
+							Type tt = D.custtypeofType[equation[2]];
+							D.setCustom("linked-list",equation[1],new LinkedList<tt>());
 						}
 						
 					}
