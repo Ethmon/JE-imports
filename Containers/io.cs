@@ -63,6 +63,27 @@ namespace io
 				//Console.WriteLine(filepath);
 				File.WriteAllText(filepath,sent_out);
 			}
+			public static void LayerSave(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+			{
+				
+				string filepath = $"{jumpE_basic.base_runner.currentPath}\\{equation[1]}";
+				string cotent = "";
+				object[][][] variables = D.getArrayOfAllCustomVariables();
+				for(int i = 0; i<variables.Count();i++)
+				{
+					if(variables[i][0][2] is jumpE_basic.Valued)
+					for(int k = 0;k < variables[i].Count();k++)
+					{
+						
+						cotent += variables[i][k][0] + " " + variables[i][k][1] + " = " + ((jumpE_basic.Valued)(variables[i][k][2])).getV().ToString() + "\n";
+						
+					}
+				}
+				cotent += "\n end";
+				File.WriteAllText(filepath,cotent);
+				
+				
+			}
 			
 			
 			

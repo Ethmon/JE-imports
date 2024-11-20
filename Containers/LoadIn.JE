@@ -3,5 +3,6 @@ useC io.cs
 useC HashedVars.cs
 // useC collections.cs
 use Common-io.cs
+use HashedVars_initiate.cs
 print added \n
 end 

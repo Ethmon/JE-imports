@@ -24,3 +24,4 @@ jumpE_basic.base_runner.Mathss.Add( "!KLast!" , io.Standard_In.LastK);
 jumpE_basic.base_runner.CommandRegistry.add_command( "VarOut" , io.Standard_Out.VarOut);
 jumpE_basic.base_runner.CommandRegistry.add_command( "StDisp" , io.Standard_Out.display);
 jumpE_basic.base_runner.CommandRegistry.add_command( "WriteF" , io.Standard_Out.WriteOut);
+jumpE_basic.base_runner.CommandRegistry.add_command( "SaveData", io.Standard_Out.LayerSave);
