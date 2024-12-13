@@ -2,6 +2,6 @@ useC common.cs
 useC io.cs
 useC HashedVars.cs
 use Common-io.cs
-use HashedVars_initiate.cs
+use Hashed_initiate.cs
 print added \n
 end 
