@@ -1,0 +1,47 @@
+// AI program for JE
+useC common.cs
+useC io.cs
+use Common-io.cs
+
+string f = TestData.txt
+string namer = Test
+jp >> DATASET
+end
+
+
+
+skip
+{
+
+>> getFromFile
+free getFromFile
+string getFromFile = file !S! ff !S! " f " \n ff !S! inst \n ff \n end;
+VarOut getFromFile
+WriteF getFromFile.txt
+<<
+
+
+
+
+>> DATASET
+side " namer "	
+	bring f
+	jp >> getFromFile
+	file fi getFromFile.txt
+	fi inst
+	fi
+	free ff
+	free fi
+	free f
+	pop
+<<
+
+
+}
+
+
+
+
+
+
+

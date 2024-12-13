@@ -1,0 +1,11 @@
+useC booleans.cs
+use booleans_initiate.cs
+bool a = Null
+if and Bcheck a
+{
+print true \n
+jp -> exit
+}
+print false \n
+>> exit
+end

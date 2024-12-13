@@ -1,7 +1,8 @@
+using System.Drawing;
 namespace graphics
 {
 
-	public class Image : jumpE_basic.CustTypeName , jumpE_basic.Copyable , jumpE_basic.Hashable
+	public class Image : jumpE_basic.CustTypeName
 	{
 		
 		Bitmap self = new Bitmap(64,64);
@@ -9,11 +10,12 @@ namespace graphics
 		{
 			
 		}
+		public string name(){return "image";}
 		public Image(int S)
 		{
 			self = new Bitmap(S,S);
 		}
-		public Image(int W,H)
+		public Image(int W,int H)
 		{
 			self = new Bitmap(W,H);
 		}
