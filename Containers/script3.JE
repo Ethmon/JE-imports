@@ -1,0 +1,39 @@
+file initi LoadIn.JE
+initi inst
+initi
+
+string name = Ethan
+int age = 17
+int dead? = 0
+jp >> INITIATEPERSON
+
+>M> Ethan speak
+
+end
+skip
+{
+
+>> INITIATEPERSON
+	Aside " name "
+		bring name
+		bring age
+		bring dead?
+		M>> ageUP
+			age += 1;
+		M<<
+		
+		M>> speak
+			print Hello !S! there!! \n;
+		M<<
+		
+		skip
+		{
+		
+		>> setage
+			bring newage
+			age = newage
+			free newage
+		<<
+		}
+<<
+}
