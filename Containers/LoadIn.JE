@@ -2,8 +2,21 @@ useC common.cs
 useC io.cs
 useC HashedVars.cs
 useC ASheets.cs
+useC UILib.cs
 use Common-io.cs
 use Hashed_initiate.cs
 use ASheets_initiate.cs
+use UILib_inst.cs
 print added \n
+
+CreateWindow HELLO 50 30
+Acall HELLO
+    M>> ender
+    StopApp
+	print \Clear
+    M<<
+	// 
+    Key Enter ender
+	RunUI
+pop
 end 

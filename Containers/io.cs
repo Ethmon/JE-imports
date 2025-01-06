@@ -40,7 +40,7 @@ namespace io
 		public class Standard_Out
 		{
 			
-			public static string sent_out;
+			public static string sent_out = "";
 			public static void VarOut(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 			{
 				if(D.referenceVar(equation[1]) is jumpE_basic.Valued)
