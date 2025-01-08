@@ -9,14 +9,5 @@ use ASheets_initiate.cs
 use UILib_inst.cs
 print added \n
 
-CreateWindow HELLO 50 30
-Acall HELLO
-    M>> ender
-    StopApp
-	print \Clear
-    M<<
-	// 
-    Key Enter ender
-	RunUI
-pop
+
 end 

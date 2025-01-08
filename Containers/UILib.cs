@@ -116,6 +116,23 @@ namespace UILib
 			
 		}
 		
+		public static void CloseWindowTHIS(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+		{
+			
+				if (Application.Top != null)
+				{
+					Application.RequestStop(Application.Top);
+					
+					Application.Top.RemoveAll();
+				}
+			
+		}
+		
+		public static void CreateTextBox(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+		{
+			
+		}
+		
 		
         public static void CreateWindow(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
         {
@@ -227,6 +244,21 @@ namespace UILib
         {
             Application.Init();
             foreach (var data in Base.datas)
+            {
+                if (data is UIWindow window)
+                {
+                    Application.Top.Add(window.WindowInstance);
+                }
+            }
+			try{
+            Application.Run();
+			}catch(Exception e){}
+        }
+		
+		public static void RunUITHIS(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+        {
+            Application.Init();
+            var data = D;
             {
                 if (data is UIWindow window)
                 {

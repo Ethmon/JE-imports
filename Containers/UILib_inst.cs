@@ -2,8 +2,10 @@
 jumpE_basic.base_runner.CommandRegistry.add_command( "CreateWindow" , UILib.UIHandler.CreateWindow );
 jumpE_basic.base_runner.CommandRegistry.add_command( "AddObject" , UILib.UIHandler.AddObjectToWindow );
 jumpE_basic.base_runner.CommandRegistry.add_command( "RunUI" , UILib.UIHandler.RunUI );
+jumpE_basic.base_runner.CommandRegistry.add_command( "RunUI-Cur" , UILib.UIHandler.RunUITHIS );
 jumpE_basic.base_runner.CommandRegistry.add_command( "Key" , UILib.UIHandler.MapKeyToMethod );
 jumpE_basic.base_runner.CommandRegistry.add_command( "StopApp" , UILib.UIHandler.CloseWindow );
+jumpE_basic.base_runner.CommandRegistry.add_command( "StopApp-Cur" , UILib.UIHandler.CloseWindowTHIS );
 
 
 

@@ -1,0 +1,38 @@
+file initi LoadIn.JE
+initi inst
+initi
+
+CreateWindow GUITEST 50 30
+Acall GUITEST
+	int i = 0;
+    M>> ender
+		StopApp
+		print \Clear
+		>M> popup
+		//
+    M<<
+	//
+	M>> supender
+		StopApp
+		print \Clear
+		if and i == 1
+		{
+		i = 0
+		RunUI-Cur
+		}
+	M<<
+	//
+	M>> popup
+		i = 1
+		CreateWindow POPUP 10 10
+		Acall POPUP
+			RunUI
+			pop
+	M<<
+	//
+	Key Enter supender
+    Key a ender
+	RunUI
+	pop
+//
+end
