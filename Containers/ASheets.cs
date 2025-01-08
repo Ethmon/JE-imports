@@ -71,13 +71,20 @@ namespace SheetsPlus
 		{
 			string Lines = "";
 			int amountoflines = 1;
+			int affa = 0;
 			for(int i = Base.position+1; i < Base.lines.Count(); i++)
 			{
 				amountoflines++;
 				if(jumpE_basic.base_runner.SimpleTokenizer.no_tab_spaces(Base.lines[i]) != "M<<")
-					Lines += Base.lines[i] + "\n";
+				{Lines += Base.lines[i] + "\n";
+					if(jumpE_basic.base_runner.SimpleTokenizer.no_tab_spaces(Base.lines[i]).Count()>3&&jumpE_basic.base_runner.SimpleTokenizer.no_tab_spaces(Base.lines[i]).Substring(0,3) == "M>>")
+						affa+=1;
+				}
 				else
-					break;
+					if(affa == 0)
+						break;
+					else{
+					Lines +=Base.lines[i] + "\n";affa -= 1;}
 			}
 			Base.position += amountoflines;
 			if(D is ASheet)

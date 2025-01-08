@@ -105,7 +105,14 @@ namespace UILib
 		*/
 		public static void CloseWindow(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 		{
-			Application.RequestStop(Application.Top);
+			
+				if (Application.Top != null)
+				{
+
+					Application.Top.RemoveAll();
+					Application.RequestStop();
+				}
+				Application.Shutdown();
 			
 		}
 		
@@ -226,7 +233,9 @@ namespace UILib
                     Application.Top.Add(window.WindowInstance);
                 }
             }
+			try{
             Application.Run();
+			}catch(Exception e){}
         }
     }
 }
