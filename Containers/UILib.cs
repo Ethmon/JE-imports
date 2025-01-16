@@ -77,11 +77,30 @@ namespace UILib
 
     public class UITextBox : SheetsPlus.ASheet, IWindowObject
     {
-        public TextField TextFieldInstance { get; private set; }
+        public TextField TextFieldInstance { get; set; }
+		
 
         public UITextBox(string initialText)
         {
             TextFieldInstance = new TextField(initialText);
+        }
+
+        public View GetView()
+        {
+            return TextFieldInstance;
+        }
+    }
+	
+	
+	
+	public class UIText : SheetsPlus.ASheet, IWindowObject
+    {
+        public Label TextFieldInstance { get; set; }
+		
+
+        public UIText(string initialText)
+        {
+            TextFieldInstance = new Label(initialText);
         }
 
         public View GetView()
@@ -128,9 +147,47 @@ namespace UILib
 			
 		}
 		
-		public static void CreateTextBox(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+		public static void CreateText(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
 		{
-			
+			string AAtitle = "";
+			string AAwidth = "";
+			bool t = false;bool w = false; bool h = false;
+			for(int i = 1; i<equation.Count(); i++)
+			{
+				if(equation[i] == "\"" && equation[i+2] == "\"" && D.referenceVar(equation[i+1]) is jumpE_basic.Valued)
+				{
+					if(!t){
+						AAtitle = ((jumpE_basic.Valued)D.referenceVar(equation[i+1])).getV().ToString();
+					t = true;}
+					else if(!w){
+						AAwidth = ((jumpE_basic.Valued)D.referenceVar(equation[i+1])).getV().ToString();
+					w = true;}
+					i += 2;
+				}
+				
+				
+					else if(!t){
+						AAtitle = equation[i];
+					t = true;}
+					else if(!w){
+						AAwidth = equation[i];
+					w = true;}
+				
+			}
+            var title = AAtitle;
+            string initialText = AAwidth;
+            var window = new UIText(initialText);
+            D.setCustom("UIText", title, window);
+		}
+		public static void ChangeText(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+		{
+			Application.Init();
+			if(D is UIText)		{
+				if(D.referenceVar(equation[1]) is jumpE_basic.Valued)		{
+					((UIText)(D)).TextFieldInstance.Text = (D.referenceVar(equation[1]).ToString());
+					Application.Refresh();
+				}
+			}
 		}
 		
 		

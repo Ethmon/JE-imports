@@ -3,11 +3,41 @@ useC io.cs
 useC HashedVars.cs
 useC ASheets.cs
 useC UILib.cs
+useC JMath.cs
 use Common-io.cs
 use Hashed_initiate.cs
 use ASheets_initiate.cs
 use UILib_inst.cs
+use JMath_initiate.cs
 print added \n
-
+Aside Windows
+M>> CreateWindow
+CreateWindow \__/ 25 25
+CreateText te THIS
+Acall \__/
+	bring te
+	bring \__/
+	AddObject \__/ te
+	M>> ender
+		StopApp
+		print \Clear
+	M<<
+	// 
+	M>> one
+		Acall te
+			string new = 1
+			TEXT new
+			print " new "
+			free new
+			pop
+	M<<
+	//
+	Key p ender
+	Key a one
+	RunUI
+	pop
+M<<
+//
+pop
 
 end 
