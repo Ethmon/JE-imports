@@ -158,7 +158,7 @@ namespace HashedVars
 		{
 			return "char";
 		}
-		public string ToString()
+		public override string ToString()
 		{
 			return self.ToString();
 		}
