@@ -7,7 +7,9 @@ jumpE_basic.base_runner.CommandRegistry.add_command( "Key" , UILib.UIHandler.Map
 jumpE_basic.base_runner.CommandRegistry.add_command( "StopApp" , UILib.UIHandler.CloseWindow );
 jumpE_basic.base_runner.CommandRegistry.add_command( "StopApp-Cur" , UILib.UIHandler.CloseWindowTHIS );
 jumpE_basic.base_runner.CommandRegistry.add_command( "CreateText" , UILib.UIHandler.CreateText );
+jumpE_basic.base_runner.CommandRegistry.add_command( "CreateTextBox" , UILib.UIHandler.CreateTextBox );
 jumpE_basic.base_runner.CommandRegistry.add_command( "TEXT" , UILib.UIHandler.ChangeText );
+jumpE_basic.base_runner.CommandRegistry.add_command( "Move" , UILib.UIHandler.PositionWindowObject );
 
 
 
@@ -20,3 +22,8 @@ jumpE_basic.Data.add_custtype("UIPicture", typeof(UILib.UIPicture));
 
 // Add placeholders for additional UI components as needed
 // For example: UISlider, UIGraph, UIChart, UISelection, UIBitmap
+
+
+
+jumpE_basic.base_runner.Mathss.Add( "!TakeText!" , UILib.UIHandler.Take_TextBoxInput);
+

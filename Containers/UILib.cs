@@ -1,5 +1,5 @@
 using Terminal.Gui;
-
+using NStack;
 namespace UILib
 {
     public class UIWindow : SheetsPlus.ASheet
@@ -89,6 +89,7 @@ namespace UILib
         {
             return TextFieldInstance;
         }
+		public override string ToString() { return TextFieldInstance.Text.ToString(); }
     }
 	
 	
@@ -189,6 +190,50 @@ namespace UILib
 				}
 			}
 		}
+		
+		public static void CreateTextBox(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+		{
+			string AAtitle = "";
+			string AAwidth = "";
+			bool t = false;bool w = false; bool h = false;
+			for(int i = 1; i<equation.Count(); i++)
+			{
+				if(equation[i] == "\"" && equation[i+2] == "\"" && D.referenceVar(equation[i+1]) is jumpE_basic.Valued)
+				{
+					if(!t){
+						AAtitle = ((jumpE_basic.Valued)D.referenceVar(equation[i+1])).getV().ToString();
+					t = true;}
+					else if(!w){
+						AAwidth = ((jumpE_basic.Valued)D.referenceVar(equation[i+1])).getV().ToString();
+					w = true;}
+					i += 2;
+				}
+				
+				
+					else if(!t){
+						AAtitle = equation[i];
+					t = true;}
+					else if(!w){
+						AAwidth = equation[i];
+					w = true;}
+				
+			}
+            var title = AAtitle;
+            string initialText = AAwidth;
+            var window = new UITextBox(initialText);
+            D.setCustom("UITextBox", title, window);
+		}
+		
+		
+		public static string[] Take_TextBoxInput(string[] equation, jumpE_basic.Data D, jumpE_basic.base_runner Base, int I, int K)
+		{
+			if (D is UITextBox currentBox)
+			{
+				return new string[] { currentBox.ToString() , "0" };
+			}
+			return new string[] { "", "0" };
+		}
+
 		
 		
         public static void CreateWindow(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
@@ -293,6 +338,19 @@ namespace UILib
 			else
 			{
 				throw new Exception("Invalid window instance.");
+			}
+		}
+		
+		public static void PositionWindowObject(List<string> equation, jumpE_basic.Data D, jumpE_basic.base_runner Base)
+		{
+			if(D is IWindowObject WinRaw)
+			{
+				int x = 0;
+				int y = 0;
+				x = (int)((D.isnumvar(equation[1])) ? ((jumpE_basic.Number)D.referenceVar(equation[1])).get_value() : ((double.TryParse(equation[1], out double cc)) ? cc : 0  ));
+				y = (int)((D.isnumvar(equation[2])) ? ((jumpE_basic.Number)D.referenceVar(equation[2])).get_value() : ((double.TryParse(equation[2], out double bb)) ? bb : 0  ));
+				WinRaw.GetView().X = x;
+				WinRaw.GetView().Y = y;
 			}
 		}
 

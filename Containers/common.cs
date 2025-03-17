@@ -379,7 +379,7 @@ namespace common
 			count = ddd.getV().ToString().Length;
 		}
 		// Console.Write(count + " this is maby working");
-		string[] aaa = {count.ToString(),"2"};
+		string[] aaa = {count.ToString(),"1"};
 		// Console.Write(aaa[0] + "    " + aaa[1] + "\n");
 		return aaa;
 			
