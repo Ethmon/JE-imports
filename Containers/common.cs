@@ -407,18 +407,26 @@ namespace common
 				if(E[I+3] != "|")
 				{
 					int sds = 0;
+					string jj = "";
 					if(D.isnumvar(E[I+3]))
 					{
 						sds = (int)(((jumpE_basic.Number)D.referenceVar(E[I+3])).get_value());
+						jj = jkj.Substring(d,sds);
 					}else if(int.TryParse(E[I+3],out int dddd))
 					{
 						sds = dddd;
+						jj = jkj.Substring(d,sds);
 					}
 					else if(E[I+3] == "->|")
 					{
 						sds = jkj.Length-d;
+						jj = jkj.Substring(d,sds);
 					}
-					string[] fff = {jkj.Substring(d,sds),"4"};
+					else if(E[I+3] == "Val")
+					{
+						jj = ((int)((jkj[d]))).ToString();
+					}
+					string[] fff = {jj,"4"};
 					return fff;
 					
 				}
